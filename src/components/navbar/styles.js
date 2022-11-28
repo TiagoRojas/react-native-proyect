@@ -1,17 +1,19 @@
-import {StyleSheet, Dimensions} from 'react-native';
-import {colors} from '../../constants/colors';
+import { StyleSheet } from 'react-native';
+import { colors } from '../../constants/colors';
 
-export const Styles = StyleSheet.create({
-	NavContainer: {
-		flexDirection: 'row',
-		justifyContent: 'space-around',
-		width: Dimensions.get('screen').width,
-		backgroundColor: colors.divider
-	},
-	ButtonText: {
-		fontSize: 16,
-		padding: 25,
-		color: colors.text.primary,
-		fontFamily: 'Mukta-Regular'
-	}
+export const styles = StyleSheet.create({
+    container: {
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        backgroundColor: colors.divider,
+    },
+    Button: {
+        paddingVertical: 20,
+        paddingHorizontal: 15,
+    },
+    Text: {
+        fontFamily: 'Mukta-Regular',
+        fontSize: 20,
+        color: colors.text.secondary,
+    },
 });

@@ -1,24 +1,41 @@
-import {useState} from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
-import {Styles} from './styles';
-
-const NavBar = ({changeScreenName}) => {
-	return (
-		<View style={Styles.NavContainer}>
-			<TouchableOpacity onPress={() => changeScreenName('Inicio')} activeOpacity={0.7}>
-				<Text style={Styles.ButtonText}>Inicio</Text>
-			</TouchableOpacity>
-			<TouchableOpacity onPress={() => changeScreenName('Peliculas')} activeOpacity={0.7}>
-				<Text style={Styles.ButtonText}>Peliculas</Text>
-			</TouchableOpacity>
-			<TouchableOpacity onPress={() => changeScreenName('Series')} activeOpacity={0.7}>
-				<Text style={Styles.ButtonText}>Series</Text>
-			</TouchableOpacity>
-			<TouchableOpacity onPress={() => changeScreenName('Anime')} activeOpacity={0.7}>
-				<Text style={Styles.ButtonText}>Anime</Text>
-			</TouchableOpacity>
-		</View>
-	);
+import { View, Text, TouchableHighlight } from 'react-native';
+import { styles } from './styles';
+import { useTranslation } from 'react-i18next';
+import { colors } from '../../constants/colors';
+const Navbar = ({ navigation }) => {
+    const [t, i18n] = useTranslation();
+    return (
+        <View style={styles.container}>
+            <TouchableHighlight
+                style={styles.Button}
+                onPress={() => navigation.navigate('Anime')}
+                activeOpacity={0.7}
+                underlayColor={colors.divider}>
+                <Text style={styles.Text}>{t('HomeBtn')}</Text>
+            </TouchableHighlight>
+            <TouchableHighlight
+                style={styles.Button}
+                onPress={() => navigation.navigate('Anime')}
+                activeOpacity={0.7}
+                underlayColor={colors.divider}>
+                <Text style={styles.Text}>{t('MovieBtn')}</Text>
+            </TouchableHighlight>
+            <TouchableHighlight
+                style={styles.Button}
+                onPress={() => i18n.changeLanguage('en')}
+                activeOpacity={0.7}
+                underlayColor={colors.divider}>
+                <Text style={styles.Text}>{t('SerieBtn')}</Text>
+            </TouchableHighlight>
+            <TouchableHighlight
+                style={styles.Button}
+                onPress={() => i18n.changeLanguage('es')}
+                activeOpacity={0.7}
+                underlayColor={colors.divider}>
+                <Text style={styles.Text}>{t('AnimeBtn')}</Text>
+            </TouchableHighlight>
+        </View>
+    );
 };
 
-export default NavBar;
+export default Navbar;
