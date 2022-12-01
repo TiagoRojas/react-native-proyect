@@ -1,8 +1,8 @@
 import { StyleSheet, View, ActivityIndicator } from 'react-native';
-import { colors } from './constants/colors';
+import { COLORS } from './constants/colors';
 import { useFonts } from 'expo-font';
 import AllNavigator from './navigation';
-
+import { bgColor } from './constants/globalStyles';
 export default function App() {
     const [loaded] = useFonts({
         'Mukta-Regular': require('../assets/fonts/Mukta-Regular.ttf'),
@@ -12,7 +12,7 @@ export default function App() {
     if (!loaded) {
         return (
             <View style={styles.container}>
-                <ActivityIndicator size="large" color={colors.primary} />
+                <ActivityIndicator size="large" color={bgColor} />
             </View>
         );
     } else {
@@ -24,8 +24,8 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: 'column',
-        backgroundColor: colors.background,
         justifyContent: 'center',
+        backgroundColor: COLORS.darkTheme.background,
     },
     mainContainer: {
         flex: 1,

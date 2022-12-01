@@ -1,10 +1,11 @@
 import { StyleSheet } from 'react-native';
-import { colors } from '../../constants/colors';
+import { COLORS } from '../../constants/colors';
+import { bgColor } from '../../constants/globalStyles';
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection: 'column',
-        backgroundColor: colors.background,
+        backgroundColor: bgColor(),
         justifyContent: 'space-between',
     },
     mainContainer: {
@@ -20,12 +21,7 @@ export const styles = StyleSheet.create({
         paddingHorizontal: 15,
         paddingBottom: 5,
         borderBottomWidth: 1,
-        borderBottomColor: colors.divider,
-    },
-    text: {
-        color: colors.text.primary,
-        fontSize: 28,
-        fontFamily: 'Mukta-Regular',
+        borderBottomColor: COLORS.divider,
     },
     searchIcon: {
         width: 40,

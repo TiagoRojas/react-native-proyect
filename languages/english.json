@@ -4,6 +4,7 @@
         "HomeBtn": "Home",
         "MovieBtn": "Movies",
         "SerieBtn": "Series",
-        "AnimeBtn": "Anime"
+        "AnimeBtn": "Anime",
+        "SettingsBtn": "Settings"
     }
 }

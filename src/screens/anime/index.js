@@ -1,9 +1,12 @@
-import { Text, View, Button } from 'react-native';
+import { Text, View } from 'react-native';
+import { CONSTSTYLES } from '../../constants/globalStyles';
+import { styles } from './styles';
 const Anime = ({ navigation }) => {
     return (
-        <View>
-            <Text>anime</Text>
-            <Button title="h" onPress={() => navigation.navigate('Home')} />
+        <View style={styles.container}>
+            <View style={CONSTSTYLES.headerContainer}>
+                <Text style={CONSTSTYLES.textHeader}>Anime</Text>
+            </View>
         </View>
     );
 };
