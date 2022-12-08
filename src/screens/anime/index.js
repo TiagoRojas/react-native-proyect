@@ -1,13 +1,13 @@
-import { Text, View } from 'react-native';
+import { SafeAreaView } from 'react-native';
 import { CONSTSTYLES } from '../../constants/globalStyles';
-import { styles } from './styles';
+import { Header } from '../../components';
+import { useTranslation } from 'react-i18next';
 const Anime = ({ navigation }) => {
+    const [t, i18n] = useTranslation();
     return (
-        <View style={styles.container}>
-            <View style={CONSTSTYLES.headerContainer}>
-                <Text style={CONSTSTYLES.textHeader}>Anime</Text>
-            </View>
-        </View>
+        <SafeAreaView style={CONSTSTYLES.AndroidSafeArea}>
+            <Header navigation={navigation} title={t('AnimeBtn')} />
+        </SafeAreaView>
     );
 };
 

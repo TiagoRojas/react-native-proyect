@@ -1,10 +1,8 @@
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { Home, Anime, Settings, Movies, Search } from '../screens';
+import { Home, Anime, SettingsMain, Movies } from '../screens';
 import { useTranslation } from 'react-i18next';
 import { CustomDrawer } from '../components';
-import { COLORS } from '../constants/colors';
-import { textColorSecondary } from '../constants/globalStyles';
-import SearchNavigator from './searchBar';
+import { textColor, textColorSecondary } from '../constants/globalStyles';
 const Drawer = createDrawerNavigator();
 const AppNavigator = () => {
     const [t, i18n] = useTranslation();
@@ -12,13 +10,19 @@ const AppNavigator = () => {
         <Drawer.Navigator
             screenOptions={{
                 keyboardDismissMode: 'on-drag',
-                drawerActiveTintColor: '#fff',
+                drawerActiveTintColor: textColor(),
                 drawerInactiveTintColor: textColorSecondary(),
-                drawerActiveBackgroundColor: COLORS.darkTheme.active,
+                drawerActiveBackgroundColor: 'rgba(255,255,255,0)',
                 headerShown: false,
             }}
             drawerContent={(props) => <CustomDrawer {...props} />}>
-            <Drawer.Screen name="Home" component={Home} options={{ drawerLabel: t('HomeBtn') }} />
+            <Drawer.Screen
+                name="Home"
+                component={Home}
+                options={{
+                    drawerLabel: t('HomeBtn'),
+                }}
+            />
             <Drawer.Screen
                 name="Anime"
                 component={Anime}
@@ -31,15 +35,8 @@ const AppNavigator = () => {
             />
             <Drawer.Screen
                 name="Settings"
-                component={Settings}
+                component={SettingsMain}
                 options={{ drawerItemStyle: { display: 'none' } }}
-            />
-            <Drawer.Screen
-                name="Search"
-                component={Search}
-                options={{
-                    drawerItemStyle: { display: 'none' },
-                }}
             />
         </Drawer.Navigator>
     );

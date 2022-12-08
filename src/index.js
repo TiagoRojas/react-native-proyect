@@ -3,6 +3,9 @@ import { COLORS } from './constants/colors';
 import { useFonts } from 'expo-font';
 import AllNavigator from './navigation';
 import { bgColor } from './constants/globalStyles';
+
+// web: 413601026253-7s694b7asltqgcsogguqmuhbbr21mf53.apps.googleusercontent.com
+// android: 413601026253-h11putmppr41d249df9aoc1m74hbiqsm.apps.googleusercontent.com
 export default function App() {
     const [loaded] = useFonts({
         'Mukta-Regular': require('../assets/fonts/Mukta-Regular.ttf'),

@@ -1,23 +1,14 @@
-import { Text, View, Image, TouchableOpacity, SafeAreaView } from 'react-native';
-import { useTranslation } from 'react-i18next';
-import { Navbar } from '../../components';
-import { styles } from './styles';
+import { Button, SafeAreaView, StatusBar, View } from 'react-native';
 import { CONSTSTYLES } from '../../constants/globalStyles';
+import { Header } from '../../components';
+import { useTranslation } from 'react-i18next';
 const Home = ({ navigation }) => {
     const [t, i18n] = useTranslation();
     return (
         <SafeAreaView style={CONSTSTYLES.AndroidSafeArea}>
-            <View style={styles.container}>
-                <View style={CONSTSTYLES.headerContainer}>
-                    <Text style={CONSTSTYLES.textHeader}>{t('Home')}</Text>
-                    <TouchableOpacity onPress={() => navigation.navigate('Search')}>
-                        <Image
-                            style={styles.searchIcon}
-                            source={require('../../../assets/lupa.png')}
-                        />
-                    </TouchableOpacity>
-                </View>
-                <Navbar navigation={navigation} />
+            <StatusBar />
+            <View style={CONSTSTYLES.mainContainer}>
+                <Header navigation={navigation} title={t('HomeBtn')} />
             </View>
         </SafeAreaView>
     );

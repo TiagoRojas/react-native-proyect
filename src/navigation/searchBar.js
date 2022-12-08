@@ -9,7 +9,7 @@ const SearchNavigator = () => {
             component={Search}
             options={{
                 headerShown: true,
-                headerTitle: 'a',
+                headerTitle: '',
             }}
         />
     </Stack.Navigator>;
